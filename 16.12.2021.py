@@ -11,9 +11,9 @@ def translate(txt):
 
 
 c = ""
-for line in open("input").read().splitlines():  # input file contains the Story just copied from web page
+for line in open("märchen").read().splitlines():  # input file contains the Story just copied from web page
     for i in line.split():
-        if "Cyber-" in i:
+        if "cyber-" in i.lower():
             if c != "":
                 if len(c.split()[-1]) > 7:
                     c += " 1"
@@ -21,7 +21,7 @@ for line in open("input").read().splitlines():  # input file contains the Story 
                     c += "1"
             else:
                 c = "1"
-        elif "Cyber" in i:
+        elif "cyber" in i.lower():
             if c != "":
                 if len(c.split()[-1]) > 7:
                     c += " 0"
@@ -32,4 +32,4 @@ for line in open("input").read().splitlines():  # input file contains the Story 
 
 print(translate(c))
 
-# Error at last char, but just correct it by mind. Copied to_ascii() and translate() from https://www.youtube.com/watch?v=5EoUi5_H_7s
+# Copied to_ascii() and translate() from https://www.youtube.com/watch?v=5EoUi5_H_7s
